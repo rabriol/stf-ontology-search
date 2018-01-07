@@ -30,7 +30,7 @@ Após o build finalizar com sucesso, execute então o comando abaixo:
 gradle bootRun
 ```
 
-Aguarde uma mensagem similar a esta *Started STFApp in 10.365 seconds (JVM running for 11.357)* e então você estará pronto para testar, para isso acesse no seu navegador o endereço localhost:8081.
+Aguarde uma mensagem similar a esta *"Started STFApp in 10.365 seconds (JVM running for 11.357)"* e então você estará pronto para testar, para isso acesse no seu navegador o endereço localhost:8081.
 
 ### Pesquisas disponíveis
 
