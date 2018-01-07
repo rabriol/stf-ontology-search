@@ -1,0 +1,33 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{title}}</h4>
+            </div>
+            <div class="modal-body">
+                <div ng-repeat="head in result.head.vars">
+                    <div class="row" ng-if="result.results.bindings.length === 2">
+                        <p>
+                            <strong>{{utils.replaceAll(head, '_', ' ');}}:</strong>
+                        </p>
+                        <p>
+                            {{result.results.bindings[1][head].value}}
+                        </p>
+                    </div>
+
+                    <div class="row" ng-if="result.results.bindings.length === 1">
+                        <p>
+                            <strong>{{utils.replaceAll(head, '_', ' ');}}:</strong>
+                        </p>
+                        <p>
+                            {{result.results.bindings[0][head].value}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

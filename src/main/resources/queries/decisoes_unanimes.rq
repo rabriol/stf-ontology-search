@@ -1,0 +1,14 @@
+PREFIX stf: <http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?descricao ?acordao
+WHERE {
+	?acordao rdf:type stf:Acordao.
+	?acordao stf:temDecisao ?decisao.
+	?decisao rdf:type stf:Decisao.
+	?decisao stf:unanime ?unanime.
+	?decisao stf:descricao ?descricao.
+
+	FILTER ( ?unanime = "sim"^^xsd:string ).
+}
+

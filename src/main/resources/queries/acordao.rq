@@ -1,0 +1,30 @@
+PREFIX stf: <http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  distinct ?Relator  ?Relator_para_Acórdão ?Órgão_Julgador ?Publicação ?Ementa ?Decisão
+WHERE {
+	?acordao rdf:type stf:Acordao.
+	?acordao stf:ementa ?Ementa.
+	?acordao stf:identificador ?identificador.
+	?acordao stf:publicacao ?Publicação.
+
+	OPTIONAL {
+		?acordao stf:temDecisao ?dec.
+		?dec rdf:type stf:Decisao.
+		?dec stf:descricao ?Decisão.
+	}
+
+	?acordao stf:temVoto ?voto.
+	?voto stf:temRelator ?rel.
+	?rel stf:nome ?Relator.
+
+	OPTIONAL {
+		?voto stf:temRelatorParaAcordao ?rel_para_acordao.
+		?rel_para_acordao stf:nome ?Relator_para_Acórdão.
+	}
+
+	?acordao stf:temOrgaoJulgador ?orgao_jul.
+	?orgao_jul stf:nome ?Órgão_Julgador.
+
+	FILTER ( ?identificador = "${acordaoId}"^^xsd:string ).
+}

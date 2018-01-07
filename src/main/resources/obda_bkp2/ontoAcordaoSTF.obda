@@ -1,0 +1,68 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#
+
+[SourceDeclaration]
+sourceUri	acordaos_v1
+connectionUrl	jdbc:mysql://localhost/ACORDAOS_v2
+username	root
+password	
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	MAPID-acordaoType
+target		:{ID} a :Acordao ; :uf {LOCAL}^^xsd:string ; :ementa {EMENTA}^^xsd:string ; :identificador {ID}^^xsd:string ; :publicacao {PUBLICACAO}^^xsd:string . 
+source		select ID, LOCAL, EMENTA, PUBLICACAO from ACORDAO
+
+mappingId	MAPID-classeProcessoADIType
+target		:{ID} a :ADI ; :sigla {NOME}^^xsd:string . 
+source		select ID, NOME from CLASSE_PROCESSO where NOME = 'ADI'
+
+mappingId	MAPID-relacaoAcordaoProcesso
+target		:{ID} :temClasseProcesso :{ID_CLASSE_PROCESSO} . 
+source		select ID, ID_CLASSE_PROCESSO from ACORDAO
+
+mappingId	MAPID-decisaoType
+target		:{ID} a :Decisao ; :classificacao {CLASSIFICACAO}^^xsd:string ; :descricao {DESCRICAO}^^xsd:string . 
+source		select ID, DESCRICAO, CLASSIFICACAO from DECISAO
+
+mappingId	MAPID-relatorType
+target		:{RELATOR} a :Relator ; :nome {RELATOR}^^xsd:string . 
+source		select distinct RELATOR from VOTO
+
+mappingId	MAPID-relatorParaAcordaoType
+target		:{RELATOR_PARA_ACORDAO} a :RelatorParaAcordao ; :nome {RELATOR_PARA_ACORDAO}^^xsd:string . 
+source		select distinct RELATOR_PARA_ACORDAO from VOTO where RELATOR_PARA_ACORDAO is not null
+
+mappingId	MAPID-relacaoAcordaoDecisao
+target		:{ID} :temDecisao :{ID_DECISAO} . 
+source		select ID, ID_DECISAO from ACORDAO
+
+mappingId	MAPID-votoType
+target		:{ID} a :Voto . 
+source		select ID from VOTO
+
+mappingId	MAPID-classeProcessoAGRType
+target		:{ID} a :AGR ; :sigla {NOME}^^xsd:string . 
+source		select ID, NOME from CLASSE_PROCESSO where NOME = 'AGR'
+
+mappingId	MAPID-relacaoRelatorVoto
+target		:{ID} :temRelator :{RELATOR} . 
+source		select RELATOR, ID from VOTO;
+
+mappingId	MAPID-relacaoRelatorParaAcordaoVoto
+target		:{ID} :temRelatorParaAcordao :{RELATOR_PARA_ACORDAO} . 
+source		select ID, RELATOR_PARA_ACORDAO from VOTO where RELATOR_PARA_ACORDAO is not null
+
+mappingId	MAPID-orgaoJulgadorType
+target		:{ORGAO_JULGADOR} a :OrgaoJulgador ; :nome {ORGAO_JULGADOR}^^xsd:string . 
+source		select distinct ORGAO_JULGADOR from ACORDAO
+
+mappingId	MAPID-relacaoAcordaoOrgaoJulgador
+target		:{ID} :temOrgaoJulgador :{ORGAO_JULGADOR} . 
+source		select ID, ORGAO_JULGADOR from ACORDAO
+
+mappingId	MAPID-relacaoAcordaoVoto
+target		:{ID} :temVoto :{ID_VOTO} . 
+source		select ID, ID_VOTO from ACORDAO
+]]
+

@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'stfapplication'
+	version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+
+springBootVersion = '1.4.4.RELEASE'
+
+repositories {
+	mavenCentral()
+}
+
+springBoot {
+	mainClass = "br.com.ime.app.STFApp"
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	compile('it.unibz.inf.ontop:ontop-quest-owlapi:1.18.0')
+	compile('it.unibz.inf.ontop:ontop-quest-sesame:1.18.0')
+	compile('ch.qos.logback:logback-classic')
+	compile('mysql:mysql-connector-java')
+	compile('org.webjars:angularjs:1.5.9')
+	compile('org.webjars.bower:angular-modal-service:0.9.10')
+	compile('org.webjars:bootstrap:3.3.6')
+	compile('org.webjars:angular-ui-bootstrap:0.14.3')
+	compile('org.webjars:jquery:1.11.3')
+
+	testCompile('junit:junit:4.12')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

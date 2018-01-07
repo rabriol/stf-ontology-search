@@ -1,0 +1,630 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF">
+    <Prefix name="" IRI="http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="#ADI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AGR"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Acordao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Advogado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Assunto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClasseProcesso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comarca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decisao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Desembargador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fato"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Juiz"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Legislacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Materia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ministro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrgaoJulgador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Partes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Presidente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RCL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recorrente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recorrido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recurso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RelatorParaAcordao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Revisor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SJ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#STF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#STJ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TJ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TRF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TSB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vara"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Voto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temAdvogado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temAssunto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temClasseProcesso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temComarca"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temDecisao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temFato"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temLegislacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temMateria"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temOrgaoJulgador"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temPresidente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temRecorrente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temRecorrido"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temRecurso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temRelator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temRelatorParaAcordao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temRevisor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temSJ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temVara"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temVoto"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cidade"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#classificacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#data"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descricao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dispositvo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ementa"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#identificador"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nome"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numero"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#numeroProcessoOriginal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#regiao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sigla"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tese"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#uf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#uri"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ADI"/>
+        <Class IRI="#ClasseProcesso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AGR"/>
+        <Class IRI="#ClasseProcesso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Presidente"/>
+        <Class IRI="#Desembargador"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Presidente"/>
+        <Class IRI="#Juiz"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Presidente"/>
+        <Class IRI="#Ministro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RCL"/>
+        <Class IRI="#ClasseProcesso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recorrente"/>
+        <Class IRI="#Partes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recorrido"/>
+        <Class IRI="#Partes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relator"/>
+        <Class IRI="#Desembargador"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relator"/>
+        <Class IRI="#Juiz"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relator"/>
+        <Class IRI="#Ministro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelatorParaAcordao"/>
+        <Class IRI="#Ministro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Revisor"/>
+        <Class IRI="#Desembargador"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Revisor"/>
+        <Class IRI="#Juiz"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Revisor"/>
+        <Class IRI="#Ministro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#STF"/>
+        <Class IRI="#TSB"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#STJ"/>
+        <Class IRI="#TSB"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TJ"/>
+        <Class IRI="#OrgaoJulgador"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TRF"/>
+        <Class IRI="#OrgaoJulgador"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TSB"/>
+        <Class IRI="#OrgaoJulgador"/>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temAdvogado"/>
+        <Class IRI="#Recorrente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temAdvogado"/>
+        <Class IRI="#Recorrido"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temAssunto"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temClasseProcesso"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temComarca"/>
+        <Class IRI="#TJ"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temDecisao"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temFato"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temLegislacao"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temMateria"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temMateria"/>
+        <Class IRI="#Fato"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temMateria"/>
+        <Class IRI="#Recurso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temMateria"/>
+        <Class IRI="#Vara"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temOrgaoJulgador"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temPresidente"/>
+        <Class IRI="#Voto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temRecorrente"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temRecorrido"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temRecurso"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temRelator"/>
+        <Class IRI="#Voto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temRelatorParaAcordao"/>
+        <Class IRI="#Voto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temRevisor"/>
+        <Class IRI="#Voto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temSJ"/>
+        <Class IRI="#TRF"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temVara"/>
+        <Class IRI="#Comarca"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temVara"/>
+        <Class IRI="#Recurso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temVara"/>
+        <Class IRI="#SJ"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temVoto"/>
+        <Class IRI="#Acordao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temAdvogado"/>
+        <Class IRI="#Advogado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temAssunto"/>
+        <Class IRI="#Assunto"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temClasseProcesso"/>
+        <Class IRI="#ClasseProcesso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temComarca"/>
+        <Class IRI="#Comarca"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temDecisao"/>
+        <Class IRI="#Decisao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temFato"/>
+        <Class IRI="#Fato"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temLegislacao"/>
+        <Class IRI="#Legislacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temMateria"/>
+        <Class IRI="#Materia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temOrgaoJulgador"/>
+        <Class IRI="#OrgaoJulgador"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temPresidente"/>
+        <Class IRI="#Presidente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temRecorrente"/>
+        <Class IRI="#Recorrente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temRecorrido"/>
+        <Class IRI="#Recorrido"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temRecurso"/>
+        <Class IRI="#Recurso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temRelator"/>
+        <Class IRI="#Relator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temRelatorParaAcordao"/>
+        <Class IRI="#RelatorParaAcordao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temRevisor"/>
+        <Class IRI="#Revisor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temSJ"/>
+        <Class IRI="#SJ"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temVara"/>
+        <Class IRI="#Vara"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#temVoto"/>
+        <Class IRI="#Voto"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cidade"/>
+        <Class IRI="#Comarca"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#classificacao"/>
+        <Class IRI="#Decisao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#data"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descricao"/>
+        <Class IRI="#Assunto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descricao"/>
+        <Class IRI="#Decisao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descricao"/>
+        <Class IRI="#Fato"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descricao"/>
+        <Class IRI="#Voto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dispositvo"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ementa"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#identificador"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nome"/>
+        <Class IRI="#Desembargador"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nome"/>
+        <Class IRI="#Juiz"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nome"/>
+        <Class IRI="#Ministro"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numero"/>
+        <Class IRI="#Recurso"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#numeroProcessoOriginal"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#publicacao"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#regiao"/>
+        <Class IRI="#TRF"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tese"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#uf"/>
+        <Class IRI="#SJ"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#uri"/>
+        <Class IRI="#Acordao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#uri"/>
+        <Class IRI="#Legislacao"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#cidade"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#classificacao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#data"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#descricao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dispositvo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ementa"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#identificador"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nome"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numero"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#numeroProcessoOriginal"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#publicacao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#regiao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tese"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#uf"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#uri"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,16 @@
+PREFIX stf: <http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT distinct ?Ministro_Desafiador ?Acordão
+WHERE {
+	?Acordão rdf:type stf:Acordao.
+	?Acordão stf:temVoto ?voto.
+	?voto rdf:type stf:Voto.
+
+	?voto stf:temRelator ?relator.
+	?relator rdf:type stf:Relator.
+
+	?voto stf:temRelatorParaAcordao ?relator_para_acordao.
+	?relator_para_acordao rdf:type stf:RelatorParaAcordao.
+	?relator_para_acordao stf:nome ?Ministro_Desafiador.
+}

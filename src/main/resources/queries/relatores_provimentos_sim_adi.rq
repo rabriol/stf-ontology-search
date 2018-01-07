@@ -1,0 +1,27 @@
+PREFIX stf: <http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT distinct ?Nome_Relator ?Acordão
+WHERE {
+	?Acordão rdf:type stf:Acordao.
+	?Acordão stf:temClasseProcesso ?classe_processo.
+	?classe_processo stf:sigla ?sigla_classe_processo.
+
+	?Acordão stf:temDecisao ?decisao.
+	?decisao rdf:type stf:Decisao.
+	?decisao stf:classificacao ?classificacao.
+
+	?Acordão stf:temVoto ?voto.
+	?voto rdf:type stf:Voto.
+	?voto stf:temRelator ?relator.
+	?relator rdf:type stf:Relator.
+	?relator stf:nome ?Nome_Relator.
+
+	OPTIONAL {
+		?voto stf:temRelatorParaAcordao ?relator_para_acordao.
+	}
+
+	FILTER( !BOUND( ?relator_para_acordao ) ).
+	FILTER ( ?classificacao = "pos"^^xsd:string ).
+	FILTER( ?sigla_classe_processo = "ADI"^^xsd:string ).
+}

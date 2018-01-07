@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>STF - Pesquisa de Jurisprudência</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/images/stf.ico" >
+</head>
+    <body ng-app="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2 class="col-md-10 col-md-offset-1">Pesquisa de Jurisprudência</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div>
+                        <div class="input-group stylish-input-group search">
+                            <input type="text" class="form-control"  placeholder="Pesquisar acórdãos" ng-model="query" >
+                            <span id="search-button" class="input-group-addon">
+                        <button call-route="/dummy">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-view></div>
+        </div>
+
+        <link rel="stylesheet" href="/css/app.css">
+
+        <!-- JQuery -->
+        <script src="/webjars/jquery/1.11.3/jquery.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="/webjars/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
+        <script src="/webjars/bootstrap/3.3.6/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+
+        <!-- Angular -->
+        <script src="/webjars/angularjs/1.5.9/angular.js"></script>
+        <script src="/webjars/angularjs/1.5.9/angular-animate.js"></script>
+        <script src="/webjars/angularjs/1.5.9/angular-resource.js"></script>
+        <script src="/webjars/angularjs/1.5.9/angular-route.js"></script>
+
+        <!-- Angular Modal Service -->
+        <script src="/webjars/angular-modal-service/0.9.10/dst/angular-modal-service.js"></script>
+
+        <script src="/js/app.js"></script>
+
+        <script src="/js/controllers.js"></script>
+        <script src="/js/services.js"></script>
+        <script src="/js/directives.js"></script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+PREFIX stf: <http://www.semanticweb.org/rabriol/ontologies/2017/0/ontoAcordaoSTF#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT distinct ?nome_relator ?acordao
+WHERE {
+	?acordao rdf:type stf:Acordao.
+
+	?acordao stf:temVoto ?voto.
+	?voto rdf:type stf:Voto.
+	?voto stf:temRelator ?relator.
+	?relator rdf:type stf:Relator.
+	?relator stf:nome ?nome_relator.
+
+	OPTIONAL {
+		?voto stf:temRelatorParaAcordao ?relator_para_acordao.
+	}
+
+	FILTER( !BOUND( ?relator_para_acordao ) ).
+}
+

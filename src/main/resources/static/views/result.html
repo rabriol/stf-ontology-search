@@ -1,0 +1,96 @@
+<div class="row" ng-show="byMinistro">
+    <table class="table table-condensed table-bordered">
+        <thead>
+        <tr>
+            <th>
+                <button type="button" ng-click="expandAll(allExpanded = !allExpanded)">
+                    <span ng-bind="allExpanded ? '-' : '+'"></span>
+                </button>
+            </th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat-start="(key, value) in byMinistro">
+            <td style="width:15px;">
+                <button ng-click="expanded = !expanded" expand>
+                    <span ng-bind="expanded ? '-' : '+'"></span>
+                </button>
+            </td>
+            <td>{{key}}</td>
+            <td>{{value.length}}</td>
+        </tr>
+        <tr ng-repeat-end ng-show="expanded">
+            <td></td>
+            <td>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                    <tr>
+                        <th ng-repeat="head in result.head.vars">{{utils.replaceAll(head, '_', ' ');}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in value">
+                        <td ng-repeat="col in row">
+                            <div ng-if="col.type === 'uri'" ng-init="elem = utils.removeURI(col.value);">
+                                <a href ng-click="openModal(elem)">{{elem}}</a>
+                            </div>
+                            <div ng-if="col.type !== 'uri'">
+                                {{col.value}}
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row" ng-show="byDecisao">
+    <table class="table table-condensed table-bordered">
+        <thead>
+        <tr>
+            <th>
+                <button type="button" ng-click="expandAll(allExpanded = !allExpanded)">
+                    <span ng-bind="allExpanded ? '-' : '+'"></span>
+                </button>
+            </th>
+            <th>Decisão</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat-start="(key, value) in byDecisao">
+            <td style="width:15px;">
+                <button ng-click="expanded = !expanded" expand>
+                    <span ng-bind="expanded ? '-' : '+'"></span>
+                </button>
+            </td>
+            <td>{{key}}</td>
+        </tr>
+        <tr ng-repeat-end ng-show="expanded">
+            <td></td>
+            <td>
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                    <tr ng-repeat="head in result.head.vars">
+                        <th  ng-if="head == 'acordao'">{{utils.replaceAll(head, '_', ' ');}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in value">
+                        <td>
+                            <div ng-init="elem = utils.removeURI(row.acordao.value);">
+                                <a href ng-click="openModal(elem)">{{elem}}</a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
